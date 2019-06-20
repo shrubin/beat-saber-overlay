@@ -1,43 +1,38 @@
-# (Unnamed) Beat Saber Overlay
+# Saber Stars HTTP Status Tournament Overlay
 
-A web-based overlay for Beat Saber
+A web-based overlay for Beat Saber based on the (Unnamed) Beat Saber Overlay by Reselim.
 
-![preview](https://i.imgur.com/fOg4TUp.png)
+![image](https://imgur.com/QEFmuWa.png)
 
 ## Installation (OBS)
 
 1. Download and install the [BeatSaberHTTPStatus plugin](https://github.com/opl-/beatsaber-http-status/releases)
 2. Create a Browser source
 
-![image](https://i.imgur.com/WyTjdtd.png)
+![image](https://imgur.com/mYnlAIT.png)
 
-3. Set the URL as `http://overlay.reselim.io/` and the size equal to your canvas size (1280x720, etc.)
+3. Set the URL as `http://overlay.assistant.moe/` and the size equal to 1280x720. **NOT your full canvas size.**
 
-![image](https://imgur.com/KxowYrw.png)
+![image](https://imgur.com/h6BVGye.png)
 
-4. (Optional) For 1080p canvases, add the `scale` modifier (ex. `http://overlay.reselim.io/?modifiers=scale`) to scale the overlay by 1.5x
+4. Fit the overlay to the screen by right clicking on the Browser source -> `Transform` -> `Fit to screen`
 
-## Options
+![image](https://imgur.com/zQdc2gR.png)
 
-Options are added to the URL query as such:
 
-```
-http://overlay.reselim.io/?modifiers=top
-```
+## 2 PC setup
+
+If you are using a 2 PC setup, it is possible to connect your streaming PC to your gaming PC by simply entering the IP and port info.
 
 ### `ip` and `port`
 
-Listen to events from another IP and/or port.
+Use the following URL, where `xxx.xxx.xxx.xxx` is your IP, and `yyyy` is your port
 
-### `modifiers`
+```
+http://overlay.assistant.moe/?ip=xxx.xxx.xxx.xxx?port=yyyy
+```
 
-Multiple modifiers can be seperated with commas.
-
-- `top`
-	* Moves the overlay to the top and reverses the layout vertically
-- `rtl`
-	* Moves the overlay to the right and uses right-to-left text
-- `scale`
-	* Scales the overlay by 1.5x, for use on 1080p canvases
-- `test`
-	* Makes the background black, for testing purposes
+Example:
+```
+http://overlay.assistant.moe/?ip=192.168.1.1?port=5000
+```
