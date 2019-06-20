@@ -2,21 +2,27 @@ body {
 	font-family: "Montserrat", sans-serif;
 
 	color: white;
-	background: black;
+	/*background: black;*/
 
+	width: 100%;
 	margin: 0;
+	overflow:hidden;
+}
 
-	display: flex;
-	flex-direction: column;
+.centeredimg {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: calc(50% - 328px);
+	bottom: 0px;
 }
 
 #overlay {
 	display: flex;
-	flex-direction: column;
-	
+	flex-direction: row;
 	position: absolute;
 	width: 100%;
-	bottom: 60px;
+	bottom: 0px;
 }
 
 /* Beatmap */
@@ -107,7 +113,7 @@ body {
 
 #cover div {
 	display: flex;
-	align-items: center;
+	align-items: bottom;
 	justify-content: center;
 
 	width: 90px;
@@ -149,46 +155,52 @@ body {
 
 #performance {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	margin: 0 0 20px 0;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: baseline;
+	width: 100%;
+	bottom: 0px;
 }
 
 #rank {
 	visibility: hidden;
 	position: absolute;
-	right: 100px;
 	text-align: center;
 }
 
-#score {
-	position: absolute;
-	text-align: center;
-	width: 100%;
-	font-size: 64px;
-	transform: translate(0, -32px);
-}
-
-#combo {
-	position: absolute;
-	right: 33%;
+#percentage {
+	order: 0;
+	flex: 0 0 130px;
 	text-align: center;
 	vertical-align:bottom;
 }
 
-#percentage {
-	position: absolute;
-	left: 33%;
+#score {
+	order: 1;
+	flex: 0 0 360px;
+	text-align: center;
+	font-size: 64px;
+}
+
+#combo {
+	order: 2;
+	flex: 0 0 130px;
 	text-align: center;
 	vertical-align:bottom;
 }
 
 .performance-group {
+	position: absolute;
 	margin: 4px 0 0 0;
+	width: 100%;
+
+	/* Nudge whole overlay down a bit */
+	bottom: -20px;
 }
 
 .performance-group .text {
-	display: inline-block;
-
 	font-size: 32px;
 	font-weight: 600;
 }
