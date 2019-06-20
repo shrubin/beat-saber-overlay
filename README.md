@@ -2,16 +2,21 @@
 
 A web-based overlay for Beat Saber based on the (Unnamed) Beat Saber Overlay by Reselim.
 
-![image](https://imgur.com/QEFmuWa.png)
+![image](https://imgur.com/2t8U0KW.png)
 
 ## Installation (OBS)
 
-1. Download and install the [BeatSaberHTTPStatus plugin](https://github.com/opl-/beatsaber-http-status/releases)
+1. Download and install the [BeatSaberHTTPStatus plugin](https://github.com/benneeh/beatsaber-http-status/releases/download/v1.5.1b/BeatSaberHTTPStatus-1.5.1-bs1.0.0-de4e310a.zip)
+
+*To install, simply extract that zip file into your `Beat Saber` directory.*
+
 2. Create a Browser source
 
 ![image](https://imgur.com/mYnlAIT.png)
 
-3. Set the URL as `http://overlay.assistant.moe/` and the size equal to 1280x720. **NOT your full canvas size.**
+3. Set the URL as `http://overlay.assistant.moe/` and the size equal to **1280x720**
+
+If your stream is not 720p, set this to 1280x720 anyway, and we will fit it to the screen in the next step!
 
 ![image](https://imgur.com/h6BVGye.png)
 
@@ -20,7 +25,11 @@ A web-based overlay for Beat Saber based on the (Unnamed) Beat Saber Overlay by 
 ![image](https://imgur.com/zQdc2gR.png)
 
 
-## 2 PC setup
+You're done! Your screen should now look like this
+
+![image](https://imgur.com/QEFmuWa.png)
+
+## OPTIONAL: 2 PC setup
 
 If you are using a 2 PC setup, it is possible to connect your streaming PC to your gaming PC by simply entering the IP and port info.
 
