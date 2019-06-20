@@ -6,17 +6,13 @@ A web-based overlay for Beat Saber based on the (Unnamed) Beat Saber Overlay by 
 
 ## Installation (OBS)
 
-1. Download and install the [BeatSaberHTTPStatus plugin](https://github.com/benneeh/beatsaber-http-status/releases/download/v1.5.1b/BeatSaberHTTPStatus-1.5.1-bs1.0.0-de4e310a.zip)
-
-*To install, simply extract that zip file into your `Beat Saber` directory.*
+1. Download and install the [BeatSaberHTTPStatus plugin](https://github.com/benneeh/beatsaber-http-status/releases/download/v1.5.1b/BeatSaberHTTPStatus-1.5.1-bs1.0.0-de4e310a.zip). *To install, simply extract that zip file into your `Beat Saber` directory.*
 
 2. Create a Browser source
 
 ![image](https://imgur.com/mYnlAIT.png)
 
-3. Set the URL as `http://overlay.assistant.moe/` and the size equal to **1280x720**
-
-If your stream is not 720p, set this to 1280x720 anyway, and we will fit it to the screen in the next step!
+3. Set the URL as `http://overlay.assistant.moe/` and the size equal to **1280x720**. If your stream is not 720p, set this to 1280x720 anyway, and we will fit it to the screen in the next step!
 
 ![image](https://imgur.com/h6BVGye.png)
 
