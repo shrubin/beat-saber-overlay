@@ -171,7 +171,7 @@ body {
 }
 
 #percentage {
-	order: 0;
+	order: 2;
 	flex: 0 0 130px;
 	text-align: center;
 	vertical-align:bottom;
@@ -185,7 +185,7 @@ body {
 }
 
 #combo {
-	order: 2;
+	order: 0;
 	flex: 0 0 130px;
 	text-align: center;
 	vertical-align:bottom;
