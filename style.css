@@ -2,7 +2,7 @@ body {
 	font-family: "Montserrat", sans-serif;
 
 	color: white;
-	/*background: gray;*/
+	background: gray;
 
 	width: 100%;
 	margin: 0;
@@ -159,16 +159,22 @@ body {
 	bottom: 0px;
 }
 
-#rank {
-	visibility: hidden;
-	position: absolute;
-	text-align: center;
+#progress-container {
+	order: 0;
+	flex: 0 0 130px;
+	vertical-align: bottom;
 }
 
-#progress-container {
+#rank-container {
 	order: 4;
 	flex: 0 0 130px;
 	vertical-align: bottom;
+}
+
+#rank {	
+	position: relative;
+	text-align: left;
+	left: 32px;
 }
 
 #progress-text {
@@ -177,8 +183,8 @@ body {
 	left: 30px;
 }
 
-#percentage {
-	order: 3;
+#combo {
+	order: 1;
 	flex: 0 0 130px;
 	text-align: center;
 	vertical-align:bottom;
@@ -191,20 +197,12 @@ body {
 	font-size: 64px;
 }
 
-#combo {
-	order: 1;
+#percentage {
+	order: 3;
 	flex: 0 0 130px;
 	text-align: center;
 	vertical-align:bottom;
 }
-
-#placeholder {
-	order: 0;
-	flex: 0 0 130px;
-	text-align: center;
-	vertical-align:bottom;
-}
-
 
 .performance-group {
 	position: absolute;
