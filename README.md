@@ -2,7 +2,7 @@
 
 A web-based overlay for Beat Saber based on the (Unnamed) Beat Saber Overlay by Reselim.
 
-![image](https://imgur.com/N4oYpeF.png)
+![image](https://imgur.com/fQ3ym1E.png)
 
 ## Installation (OBS)
 
@@ -23,7 +23,7 @@ A web-based overlay for Beat Saber based on the (Unnamed) Beat Saber Overlay by 
 
 You're done! Your screen should now look like this
 
-![image](https://imgur.com/wbVLVPv.png)
+![image](https://imgur.com/sqWB1CI.png)
 
 ## OPTIONAL: 2 PC setup
 
