@@ -2,7 +2,7 @@ body {
 	font-family: "Montserrat", sans-serif;
 
 	color: white;
-	/*background: black;*/
+	/*background: gray;*/
 
 	width: 100%;
 	margin: 0;
@@ -146,11 +146,6 @@ body {
 	stroke-dashoffset: 188.495px;
 }
 
-#progress-text {
-	font-size: 16px;
-	font-weight: 600;
-}
-
 /* Performance */
 
 #performance {
@@ -170,26 +165,46 @@ body {
 	text-align: center;
 }
 
+#progress-container {
+	order: 4;
+	flex: 0 0 130px;
+	vertical-align: bottom;
+}
+
+#progress-text {
+	position: relative;
+	text-align: left;
+	left: 30px;
+}
+
 #percentage {
-	order: 2;
+	order: 3;
 	flex: 0 0 130px;
 	text-align: center;
 	vertical-align:bottom;
 }
 
 #score {
-	order: 1;
+	order: 2;
 	flex: 0 0 360px;
 	text-align: center;
 	font-size: 64px;
 }
 
 #combo {
+	order: 1;
+	flex: 0 0 130px;
+	text-align: center;
+	vertical-align:bottom;
+}
+
+#placeholder {
 	order: 0;
 	flex: 0 0 130px;
 	text-align: center;
 	vertical-align:bottom;
 }
+
 
 .performance-group {
 	position: absolute;
