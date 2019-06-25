@@ -26,6 +26,8 @@ function connectTeam() {
 		console.log("left team");
 	});
 
+	ui.showTeamScore();
+
 	setTimeout(ping.bind(null, teamSocket), 30000);
 }
 

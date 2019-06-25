@@ -166,6 +166,10 @@ const ui = (() => {
 			main.classList.remove("hidden");
 		},
 
+		showTeamScore() {
+			document.getElementById("teamScore").removeAttribute("hidden");
+		},
+
 		performance,
 		timer,
 		beatmap,
