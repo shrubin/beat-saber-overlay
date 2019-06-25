@@ -177,6 +177,12 @@ body {
 	left: 32px;
 }
 
+#teamScore {
+	text-align: center;
+	font-size: 64px;
+	color: black;
+}
+
 #progress-text {
 	position: relative;
 	text-align: left;

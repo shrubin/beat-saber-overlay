@@ -145,6 +145,18 @@ const ui = (() => {
 		}
 	})();
 
+	const teamScore = (() => {
+		var teamScore = document.getElementById("teamScore");
+
+		function format(number) {
+			return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+		}
+
+		return (data) => {
+			teamScore.innerText = format(data);
+		}
+	})();
+
 	return {
 		hide() {
 			main.classList.add("hidden");
@@ -156,6 +168,7 @@ const ui = (() => {
 
 		performance,
 		timer,
-		beatmap
+		beatmap,
+		teamScore
 	}
 })();

@@ -15,6 +15,9 @@ function connect() {
 		if (event) {
 			event(data.status, data.time);
 		}
+		if (teamSocket) {
+			teamSocket.send(data.status.performance.score);
+		}
 	});
 
 	socket.addEventListener("close", () => {
