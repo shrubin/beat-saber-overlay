@@ -13,6 +13,7 @@ function connectTeam() {
 	if (!team || !user) return;
 
 	teamSocket = new WebSocket(`wss://${ip}/${team}/${user}`);
+	// teamSocket = new WebSocket(`ws://localhost:6558/${team}/${user}`);
 
 	teamSocket.addEventListener("open", () => {
 		console.log("joined team");
