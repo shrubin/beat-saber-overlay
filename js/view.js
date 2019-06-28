@@ -1,3 +1,4 @@
+const query = new URLSearchParams(location.search);
 var viewSocket;
 
 function ping(socket) {
@@ -34,8 +35,20 @@ function setRow(row, name, score) {
     row.lastChild.textContent = score;
 }
 
+function createDiv(parent) {
+    var div = document.createElement("div");
+    parent.appendChild(div);
+    return div;
+}
+
 function connectDisplay() {
     const ip = "beat-saber-team-scores.herokuapp.com";
+    var style = query.get("style");
+    var teams = query.get("teams");
+
+    if (teams) {
+        teams = teams.split(",");
+    }
 
     viewSocket = new WebSocket(`wss://${ip}`);
     // viewSocket = new WebSocket(`ws://localhost:6558`);
@@ -49,12 +62,20 @@ function connectDisplay() {
         clear(view);
         var scores = JSON.parse(message.data);
         for (var team in scores) {
-            var table = createTable(view);
-            var header = createRow(table);
+            if (teams && !teams.includes(team)) continue;
             var total = 0;
             for (var user in scores[team]) {
+                total += scores[team][user];
+            }
+            if (style === "team-score-only") {
+                var div = createDiv(view);
+                div.textContent = total;
+                continue;
+            }
+            var table = createTable(view);
+            var header = createRow(table);
+            for (var user in scores[team]) {
                 var score = scores[team][user];
-                total += score;
                 var row = createRow(table);
                 setRow(row, user, score);
             };

@@ -9,6 +9,7 @@ function connectTeam() {
 	const ip = "beat-saber-team-scores.herokuapp.com";
 	var team = query.get("team");
 	var user = query.get("user");
+	var hide = query.has("hide");
 
 	if (!team || !user) return;
 
@@ -19,15 +20,16 @@ function connectTeam() {
 		console.log("joined team");
 	});
 
-	teamSocket.addEventListener("message", (message) => {
-		ui.teamScore(message.data);
-	});
-
 	teamSocket.addEventListener("close", () => {
 		console.log("left team");
 	});
 
-	ui.showTeamScore();
+	if (!hide) {
+		teamSocket.addEventListener("message", (message) => {
+			ui.teamScore(message.data);
+		});
+		ui.showTeamScore();
+	}
 
 	setTimeout(ping.bind(null, teamSocket), 30000);
 }
