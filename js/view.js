@@ -83,6 +83,7 @@ function connectDisplay() {
                 addLinks();
                 var div = createDiv(view);
                 div.textContent = total;
+                div.id = "teamScore";
                 continue;
             }
             var table = createTable(view);
