@@ -1,6 +1,7 @@
 var teamSocket;
 
 function ping(socket) {
+	if (socket != teamSocket) return;
 	socket.send('ping');
 	setTimeout(ping.bind(null, socket), 30000);
 }
@@ -20,16 +21,17 @@ function connectTeam() {
 		console.log("joined team");
 	});
 
-	teamSocket.addEventListener("close", () => {
-		console.log("left team");
-	});
-
 	if (!hide) {
 		teamSocket.addEventListener("message", (message) => {
 			ui.teamScore(message.data);
 		});
 		ui.showTeamScore();
 	}
+
+	teamSocket.addEventListener("close", () => {
+		console.log("team disconnected, retrying in 3 seconds");
+		setTimeout(connectTeam, 3000);
+	});
 
 	setTimeout(ping.bind(null, teamSocket), 30000);
 }
