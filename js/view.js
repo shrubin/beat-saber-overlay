@@ -41,6 +41,18 @@ function createDiv(parent) {
     return div;
 }
 
+function addLinks() {
+    var head = document.getElementsByTagName("head")[0];
+    var style = document.createElement("link");
+    var font = document.createElement("link");
+    style.rel = "stylesheet";
+    style.href = "style.css";
+    font.rel = "stylesheet";
+    font.href = "https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800";
+    head.appendChild(style);
+    head.appendChild(font);
+}
+
 function connectDisplay() {
     const ip = "beat-saber-team-scores.herokuapp.com";
     var style = query.get("style");
@@ -68,6 +80,7 @@ function connectDisplay() {
                 total += scores[team][user];
             }
             if (style === "team-score-only") {
+                addLinks();
                 var div = createDiv(view);
                 div.textContent = total;
                 continue;
