@@ -2,6 +2,7 @@ const query = new URLSearchParams(location.search);
 var viewSocket;
 
 function ping(socket) {
+    if (socket != viewSocket) return;
     socket.send("ping");
     setTimeout(ping.bind(null, socket), 30000);
 }
@@ -98,7 +99,8 @@ function connectDisplay() {
     });
 
     viewSocket.addEventListener("close", () => {
-        console.log("left view");
+        console.log("view disconnected, retrying in 3 seconds");
+		setTimeout(connectDisplay, 3000);
     });
 
     setTimeout(ping.bind(null, viewSocket), 30000);
