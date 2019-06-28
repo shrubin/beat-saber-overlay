@@ -2,7 +2,7 @@ const query = new URLSearchParams(location.search);
 var viewSocket;
 
 function ping(socket) {
-	if (socket != viewSocket) return;
+	if (socket !== viewSocket) return;
 	socket.send("ping");
 	setTimeout(ping.bind(null, socket), 30000);
 }
