@@ -275,3 +275,7 @@ body {
 #overlay #performance > *:nth-child(1) {
 	transition-delay: 300ms !important;
 }
+
+#view {
+	font-weight: 600;
+}
