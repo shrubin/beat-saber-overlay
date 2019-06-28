@@ -1,7 +1,7 @@
 var teamSocket;
 
 function ping(socket) {
-	if (socket != teamSocket) return;
+	if (socket !== teamSocket) return;
 	socket.send('ping');
 	setTimeout(ping.bind(null, socket), 30000);
 }
