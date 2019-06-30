@@ -33,7 +33,7 @@ function connect() {
 		setTimeout(connect, 3000);
 	});
 
-	if (teamSocket) {
+	if (query.has("team") && query.has("user")) {
 		sendTeamScore();
 	}
 }
