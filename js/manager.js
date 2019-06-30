@@ -1,3 +1,13 @@
+var scoreToSend = 0;
+var lastScore = -1;
+function sendTeamScore() {
+	if (scoreToSend != lastScore) {
+		teamSocket.send(scoreToSend);
+		lastScore = scoreToSend;
+	}
+	setTimeout(sendTeamScore, 1000);
+}
+
 function connect() {
 	var ip = query.get("ip") || "localhost";
 	var port = query.get("port") || 6557;
@@ -15,15 +25,17 @@ function connect() {
 		if (event) {
 			event(data.status, data.time);
 		}
-		if (teamSocket) {
-			teamSocket.send(data.status.performance.score);
-		}
+		scoreToSend = data.status.performance.score;
 	});
 
 	socket.addEventListener("close", () => {
 		console.log("Failed to connect to server, retrying in 3 seconds");
 		setTimeout(connect, 3000);
 	});
+
+	if (teamSocket) {
+		sendTeamScore();
+	}
 }
 
 connect();
